@@ -259,6 +259,7 @@ init_config()
 {
 	if [ ! -f "${CONFFILE}" ]; then
 		# make config file
+		mkdir -p "`dirname "${CONFFILE}"`"
 		:>"${CONFFILE}"
 		set_conf "HTTP_COMMAND" "curl"
 	fi
